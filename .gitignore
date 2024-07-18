@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+dist/
+
+# macOS filesystem files
+.DS_Store
+
+# Cache
+.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log
+
+# Others
+# Add other files/directories you want to ignore
