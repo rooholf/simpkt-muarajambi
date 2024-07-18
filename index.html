@@ -155,7 +155,7 @@
                             <p class="mt-8 lg:mr-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                                 nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
                             <div class="hero_btn mt-10">
-                                <a class="main-btn" href="#0" id="loginBtn">Login untuk Admin</a>
+                                <a class="main-btn" href="#0" id="loginBtn">Logout</a>
                             </div>
                         </div> <!-- header hero content -->
                     </div>
@@ -368,7 +368,7 @@
                 <div class="w-full lg:w-1/2">
                     <div class="section_title text-center pb-6">
                         <h5 class="sub_title">Team</h5>
-                        <h4 class="main_title">Dinas Pendidikan dan Kebudayaan Kabupaten Muaro Jambi</h4>
+                        <h4 class="main_title">Bidang Pembinaan Ketenagaan kabupaten Muaro Jambi</h4>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -672,7 +672,7 @@
                 </div> <!-- footer social -->
                 <div class="footer_copyright_content pt-4 text-center">
                     <p class="text-white">Designed and Developed by <a href="https://github.com/rooholf" rel="nofollow"
-                            class="text-white hover:text-theme-color">Rooholf</a> </p>
+                            class="text-white hover:text-theme-color">Noelimit</a> </p>
                 </div> <!-- footer copyright content -->
             </div> <!-- footer copyright -->
         </div> <!-- container -->
@@ -805,7 +805,8 @@
 
         async function checkLoginAndUpdateButton() {
             const { data: user, error } = await supabase.auth.getUser();
-            if (user) {
+
+            if (user.user) {
                 document.getElementById('loginBtn').textContent = 'Logout';
             } else {
                 document.getElementById('loginBtn').textContent = 'Login untuk Admin';

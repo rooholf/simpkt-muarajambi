@@ -75,7 +75,7 @@ export const CsvTables = (options) => {
 
             async function checkUserLoggedIn() {
                 const { data: user, error } = await supabase.auth.getUser();
-                return !!user;
+                return !!user.user;
             }
 
             // Call the function and append the button only if the user is logged in
@@ -126,9 +126,6 @@ export const CsvTables = (options) => {
             if (allow_download) {
                 $containerElement.append("<p><a class='button button-primary' href='" + csv_path + "'><i class='glyphicon glyphicon-download'></i> Download Data</a></p>");
             }
-
-
-
         });
 
 }
