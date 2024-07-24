@@ -93,41 +93,39 @@ export const CsvTables = (options) => {
             }
             // Now, trigger the click event on #fileInput
             $("#fileInput").click();
+            $("#fileInput").change(async function (e) {
+              if (e.target.files.length > 0) {
+                const file = e.target.files[0];
+                //adjust the filename to include timestamp
+                const d = new Date();
+                const timestamp = d.getTime();
+                const filePath = `uploaded/${timestamp}-${file.name}`;
+
+                try {
+                  const { data, error } = await supabase.storage.from('simpkt-csv').upload(filePath, file);
+
+                  if (error) {
+                    throw error;
+                  }
+
+                  // alert the user of a successful upload
+                  alert("File uploaded successfully. Click 'Download Data' to view the updated data.");
+
+                  //reload the page to show the updated data
+                  location.reload();
+
+                  // Optionally, display the uploaded file or its URL to the user
+                } catch (error) {
+                  console.error('Error uploading file:', error.message);
+                }
+              }
+            });
+
           });
         }
       });
 
-      $("#fileInput").change(async function (e) {
 
-        if (e.target.files.length > 0) {
-          const file = e.target.files[0];
-          //adjust the filename to include timestamp
-          const d = new Date();
-          const timestamp = d.getTime();
-          const filePath = `uploaded/${timestamp}-${file.name}`;
-
-          try {
-            const { data, error } = await supabase.storage.from('simpkt-csv').upload(filePath, file);
-
-            if (error) {
-              throw error;
-            }
-
-            // alert the user of a successful upload
-            alert("File uploaded successfully. Click 'Download Data' to view the updated data.");
-
-            //reload the page to show the updated data
-            location.reload();
-
-
-
-
-            // Optionally, display the uploaded file or its URL to the user
-          } catch (error) {
-            console.error('Error uploading file:', error.message);
-          }
-        }
-      });
 
       if (allow_download) {
         $containerElement.append("<p><a class='button button-primary' href='" + csv_path + "'><i class='glyphicon glyphicon-download'></i> Download Data</a></p>");
