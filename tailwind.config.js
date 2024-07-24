@@ -1,9 +1,14 @@
 module.exports = {
   purge: {
-    enabled: false,
+    enabled: true,
+    mode: 'all',
+    preserveHtmlElements: false,
     content: [
       '*.html',
-      './assets/js/main.js'
+      './assets/js/main.js',
+      './assets/js/csvTables.js',
+      './assets/js/dataTables.js',
+      './assets/js/dataTables.Tailwind.js'
     ]
   },
   darkMode: false, // or 'media' or 'class'

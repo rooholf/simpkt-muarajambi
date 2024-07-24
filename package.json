@@ -10,7 +10,8 @@
     "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "build:css": "tailwind build -i src/tailwindcss.css -o assets/css/tailwindcss.css && sass src/datatables.tailwind.scss assets/datatables.tailwind.css"
+    "build:css": "tailwind build -i src/tailwindcss.css -o assets/css/tailwindcss.css && sass src/datatables.tailwind.scss assets/datatables.tailwind.css",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "",
