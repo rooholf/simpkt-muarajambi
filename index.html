@@ -297,7 +297,6 @@
                 </div>
             </div> <!-- row -->
 
-
             <div class="row justify-center">
                 <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
                     <button id="honorerSearch" class="w-full">
@@ -353,8 +352,59 @@
                 <div>
                     <div id="table-container" class="w-full mt-3"></div>
                 </div>
-
             </div> <!-- row -->
+
+            <div class="row justify-center ">
+                <div class="w-full lg:w-1/2">
+                    <div class="section_title text-center  pt-120 pb-6">
+                        <h5 class="sub_title">Informasi</h5>
+                        <h4 class="main_title"> Kebutuhan Tenaga Ajar Sekolah Muaro Jambi</h4>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+
+
+            <div class="row justify-center">
+                <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
+                    <button id="sdSearch" class="w-full">
+                        <div class="single_services text-center mt-8 mx-3">
+                            <div class="services_icon">
+                                <i class="lni lni-checkmark-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" viewBox="0 0 94 92">
+                                    <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
+                                        d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
+                                </svg>
+                            </div>
+                            <div class="services_content mt-5">
+                                <h3 class="services_title text-black font-semibold text-xl md:text-3xl">SD</h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </button>
+                </div>
+
+                <div class="w-full sm:w-10/12 md:w-6/12 lg:w-4/12">
+                    <button id="smpSearch" class="w-full">
+                        <div class="single_services text-center mt-8 mx-3">
+                            <div class="services_icon">
+                                <i class="lni lni-checkmark-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" viewBox="0 0 94 92">
+                                    <path class="services_shape" id="Polygon_12" data-name="Polygon 12"
+                                        d="M42.212,2.315a11,11,0,0,1,9.576,0l28.138,13.6a11,11,0,0,1,5.938,7.465L92.83,54.018A11,11,0,0,1,90.717,63.3L71.22,87.842A11,11,0,0,1,62.607,92H31.393a11,11,0,0,1-8.613-4.158L3.283,63.3A11,11,0,0,1,1.17,54.018L8.136,23.383a11,11,0,0,1,5.938-7.465Z" />
+                                </svg>
+                            </div>
+                            <div class="services_content mt-5">
+                                <h3 class="services_title text-black font-semibold text-xl md:text-3xl">SMP</h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </button>
+                </div>
+
+                <div>
+                    <div id="table-kebutuhan-guru" class="w-full mt-3"></div>
+                </div>
+            </div>
+
+
         </div> <!-- container -->
     </section>
 
@@ -736,10 +786,11 @@
         import { supabase } from './assets/js/initSupabase.js';
         import { CsvTables } from './assets/js/csvTables.js';
 
-        async function getLatestFileName() {
-            const { data, error } = await supabase.storage.from('simpkt-csv').list('uploaded');
+        // Function to get the latest file name from a specified folder
+        async function getLatestFileName(folder) {
+            const { data, error } = await supabase.storage.from('simpkt-csv').list(folder);
             if (error || !data || data.length === 0) {
-                console.error('Error listing files or no files found:', error?.message);
+                console.error(`Error listing files in folder ${folder} or no files found:`, error?.message);
                 return null;
             }
             // Sort the files by name in descending order to find the latest
@@ -747,30 +798,30 @@
             return sortedFiles[0].name; // Return the name of the latest file
         }
 
-        async function getFilePublicUrl(fileName) {
-            const { data, error } = supabase.storage.from('simpkt-csv').getPublicUrl(`uploaded/${fileName}`);
+        // Function to get the public URL of a file in a specified folder
+        async function getFilePublicUrl(folder, fileName) {
+            const { data, error } = supabase.storage.from('simpkt-csv').getPublicUrl(`${folder}/${fileName}`);
             if (error) {
-                console.error('Error getting file URL:', error.message);
+                console.error(`Error getting file URL for ${folder}/${fileName}:`, error.message);
                 return null;
             }
             return data.publicUrl;
         }
 
-        async function getLatestFileUrl() {
-            const latestFileName = await getLatestFileName();
+        // Function to get the latest file URL from a specified folder
+        async function getLatestFileUrl(folder) {
+            const latestFileName = await getLatestFileName(folder);
             if (!latestFileName) {
-                console.error('Could not get the latest file name.');
+                console.error(`Could not get the latest file name in folder ${folder}.`);
                 return null;
             }
-            const publicURL = await getFilePublicUrl(latestFileName);
+            const publicURL = await getFilePublicUrl(folder, latestFileName);
             if (!publicURL) {
-                console.error('Could not get the public URL for the latest file.');
+                console.error(`Could not get the public URL for the latest file in folder ${folder}.`);
                 return null;
             }
             return publicURL;
         }
-
-        const latestFileUrl = await getLatestFileUrl();
 
         function format_link(link) {
             if (link)
@@ -778,8 +829,29 @@
             else return "";
         }
 
+        // Example usage to get links from "uploaded" and "rombel" folders
+        async function generateLinks() {
+            const folders = ['uploaded', 'rombel'];
+            const links = {};
+
+            for (const folder of folders) {
+                const link = await getLatestFileUrl(folder);
+                if (link) {
+                    links[folder] = link;
+                } else {
+                    links[folder] = "No file found";
+                }
+            }
+
+            return links;
+        }
+
+        const uploadedLink = await generateLinks().then(links => links.uploaded);
+        const rombelLink = await generateLinks().then(links => links.rombel);
+
         CsvTables({
-            csv_path: latestFileUrl,
+            csv_path: uploadedLink,
+            rombel_path: rombelLink,
             element: "table-container",
             allow_download: true,
             csv_options: {
@@ -795,6 +867,13 @@
                     targets: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25],
                     visible: false,
                 }],
+            },
+            datatables_options2: {
+                paging: true,
+                lengthChange: true,
+                pageLength: 10,
+                scrollX: true,
+
             },
             custom_formatting: [
                 [4, format_link]
