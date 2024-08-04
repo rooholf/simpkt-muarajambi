@@ -281,7 +281,6 @@ export const CsvTables = (options) => {
       }
     });
 
-    $containerElement2.append("<p><a class='button button-primary' href='" + csv_path + "'><i class='glyphicon glyphicon-download'></i> Download Data</a></p>");
 
 
   }).catch(function (error) {

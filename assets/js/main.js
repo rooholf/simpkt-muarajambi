@@ -91,40 +91,7 @@
     new WOW().init();
 
 
-    //======== tiny slider for work
-    // tns({
-    //     container: '.work_active',
-    //     autoplay: true,
-    //     autoplayTimeout: 5000,
-    //     autoplayText: [' ', ' '],
-    //     mouseDrag: true,
-    //     gutter: 0,
-    //     nav: true,
-    //     controls: false,
-    //     controlsText: [
-    //         '<i class="lni lni-chevron-left prev"></i>',
-    //         '<i class="lni lni-chevron-right next"></i>'
-    //     ],
-    //     items: 5,
-
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //         },
-    //         570: {
-    //             items: 2,
-    //         },
-    //         850: {
-    //             items: 3,
-    //         },
-    //         1200: {
-    //             items: 4,
-    //         },
-    //         1400: {
-    //             items: 5,
-    //         },
-    //     }
-    // });
+   
     //======== tiny slider for team
     tns({
       container: '.team_active',

@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!--====== Title ======-->
+    <title>SIMPKT - Muaro Jambi</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/png">
+
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="./assets/css/animate.css">
+
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="./assets/css/tiny-slider.css">
+
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="./assets/fonts/lineicons/font-css/LineIcons.css">
+
+    <!--====== Tailwind CSS ======-->
+    <link rel="stylesheet" href="./assets/css/tailwindcss.css">
+
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="./assets/css/datatables.tailwind.css">
+
+
+</head>
+
+<body>
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== HEADER PART START ======-->
+
+    <section class="header_area">
+        <div class="navbar-area bg-white">
+            <div class="container relative">
+                <div class="row items-center">
+                    <div class="w-full">
+                        <nav class="flex items-center justify-between py-4 navbar navbar-expand-lg">
+                            <a class="navbar-brand mr-5" href="index.html">
+                                <img src="./assets/images/logo-simpkt.png" width="200" alt="Logo">
+                            </a>
+                            <button class="block navbar-toggler focus:outline-none lg:hidden" type="button"
+                                data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+
+                            <div class="absolute left-0 z-20 hidden w-full px-5 py-3 duration-300 bg-white lg:w-auto collapse navbar-collapse lg:block top-full mt-full lg:static lg:bg-transparent shadow lg:shadow-none"
+                                id="navbarOne">
+                                <ul id="nav"
+                                    class="items-center content-start mr-auto lg:justify-end navbar-nav lg:flex">
+                                    <li class="nav-item ml-5 lg:ml-11">
+                                        <a class="page-scroll active" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item ml-5 lg:ml-11">
+                                        <a class="page-scroll" href="index.html/#about">Informasi</a>
+                                    </li>
+                                    <li class="nav-item ml-5 lg:ml-11">
+                                        <a class="page-scroll" href="index.html/#team">Team</a>
+                                    </li>
+                                    <li class="nav-item ml-5 lg:ml-11">
+                                        <a class="page-scroll" href="index.html/#blog">Blog</a>
+                                    </li>
+                                    <li class="nav-item ml-5 lg:ml-11">
+                                        <a class="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header navbar -->
+
+
+    </section>
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== BLOG DETAIL PART START ======-->
+
+
+    <section class="blog_detail_area pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-center">
+                <div class="w-full lg:w-8/12">
+                    <div class="blog_detail_wrapper">
+                        <div class="blog_detail_title lg:w-6/12 justify-center mt-7">
+                            <h2 id="post-title" class="title">
+                            </h2>
+                        </div> <!-- blog detail title -->
+
+                        <div class="blog_detail_image mt-11">
+                            <img id="post-image" src="" alt="blog" class="max-w-screen-sm mx-auto">
+                        </div> <!-- blog detail image -->
+                        <div class="blog_detail_content mt-11">
+                            <div class="blog_detail_meta flex items-center justify-between">
+                                <div class="meta_left flex items-center">
+                                    <div class="meta_image
+                                    ">
+                                        <img  src="" alt="">
+                                    </div>
+                                    <div class="meta_content ml-4">
+                                        <h6 id="post-author" class="meta_name"></h6>
+                                        <p id='post-date' class="meta_date"></p>
+                                    </div>
+                                </div>
+                                <div class="meta_right">
+                                    <a href="#" class="meta_link">Technology</a>
+                                </div>
+                            </div> <!-- blog detail meta -->
+
+
+                            <div class="blog_detail_text mt-9">
+                                <div id="post-content" class="text"></div>
+                            </div> <!-- blog detail text -->
+
+
+                        </div> <!-- blog detail content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--====== FOOTER PART START ======-->
+
+    <footer id="footer" class="footer_area bg-black relative z-10">
+        <div class="shape absolute left-0 top-0 opacity-5 h-full overflow-hidden w-1/3">
+            <img src="./assets/images/footer-shape-left.png" alt="">
+        </div>
+        <div class="shape absolute right-0 top-0 opacity-5 h-full overflow-hidden w-1/3">
+            <img src="./assets/images/footer-shape-right.png" alt="">
+        </div>
+        <div class="container">
+            <div class="footer_widget pt-18 pb-120">
+                <div class="row justify-center">
+                    <div class="w-full md:w-1/2 lg:w-3/12">
+                        <div class="footer_about mt-13 mx-3">
+                            <div class="footer_logo">
+                                <a href="#"><img src="./assets/images/logo-footer.png" alt=""></a>
+                            </div>
+                            <div class="footer_content mt-8">
+                                <p class="text-white"></p>
+                            </div>
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-5/12">
+                        <div class="footer_link_wrapper flex flex-wrap mx-3">
+                            <div class="footer_link w-1/2 md:pl-13 mt-13">
+                                <h2 class="footer_title text-xl font-semibold text-white">Quick Links</h2>
+                                <ul class="link pt-4">
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">Company</a></li>
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">Privacy Policy</a>
+                                    </li>
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">About</a></li>
+                                </ul>
+                            </div> <!-- footer link -->
+                            <div class="footer_link w-1/2 md:pl-13 mt-13">
+                                <h2 class="footer_title text-xl font-semibold text-white">Resources</h2>
+                                <ul class="link pt-4">
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">Support</a></li>
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">Contact</a></li>
+                                    <li><a href="#" class="text-white mt-4 hover:text-theme-color">Terms</a></li>
+                                </ul>
+                            </div> <!-- footer link -->
+                        </div> <!-- footer link wrapper -->
+                    </div>
+                    <div class="w-full md:w-2/3 lg:w-4/12">
+                        <div class="footer_subscribe mt-13 mx-3">
+                            <h2 class="footer_title text-xl font-semibold text-white">Newsletter</h2>
+                            <div class="subscribe_form text-right mt-9 relative">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter email"
+                                        class="w-full py-5 px-6 bg-white text-black rounded-full border-none">
+                                    <button class="main-btn subscribe-btn">Subscribe</button>
+                                </form>
+                            </div>
+                        </div> <!-- footer subscribe -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- footer widget -->
+            <div
+                class="footer_copyright pt-3 pb-6 border-t-2 border-solid border-white border-opacity-10 sm:flex justify-between">
+                <div class="footer_social pt-4 mx-3 text-center">
+                    <ul class="social flex justify-center sm:justify-start">
+                        <li class="mr-3"><a href="https://facebook.com/uideckHQ"><i
+                                    class="lni lni-facebook-filled"></i></a></li>
+                        <li class="mr-3"><a href="https://twitter.com/uideckHQ"><i
+                                    class="lni lni-twitter-filled"></i></a></li>
+                        <li class="mr-3"><a href="https://instagram.com/uideckHQ"><i
+                                    class="lni lni-instagram-original"></i></a></li>
+                        <li class="mr-3"><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                    </ul>
+                </div> <!-- footer social -->
+                <div class="footer_copyright_content pt-4 text-center">
+                    <p class="text-white">Designed and Developed by <a href="https://github.com/rooholf" rel="nofollow"
+                            class="text-white hover:text-theme-color">Noelimit</a> </p>
+                </div> <!-- footer copyright content -->
+            </div> <!-- footer copyright -->
+        </div> <!-- container -->
+    </footer>
+
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="scroll-top"><i class="lni lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->
+
+    <!--====== PART START ======-->
+
+    <!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-">
+
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <!--====== PART ENDS ======-->
+
+
+
+
+
+ <!-- contentfull blog list -->
+ <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+
+ <script type="module">
+
+ import contentfulrichTextHtmlRenderer from 'https://cdn.jsdelivr.net/npm/@contentful/rich-text-html-renderer@16.6.8/+esm'
+
+
+     document.addEventListener('DOMContentLoaded', function() {
+       const client = contentful.createClient({
+         space: 'vkuet8p2ux3r', // Replace with your Contentful space ID
+         accessToken: 's20_dMSBkbxKL8M8jz9HGSnzg3OB0971DCuEl6y6xf4' // Replace with your Contentful access token
+       });
+
+       const postId = new URLSearchParams(window.location.search).get('id');
+
+       async function fetchAndDisplayPost(postId) {
+         try {
+           const entry = await client.getEntry(postId);
+           document.getElementById('post-title').textContent = entry.fields.tittle;
+           document.getElementById('post-author').textContent = `By ${entry.fields.author}`;
+           document.getElementById('post-date').textContent = new Date(entry.fields.publishDate).toLocaleDateString();
+           document.getElementById('post-image').src = entry.fields.image.fields.file.url;
+           document.getElementById('post-image').alt = entry.fields.title;
+
+           const contentHtml = contentfulrichTextHtmlRenderer.documentToHtmlString(entry.fields.content);
+           document.getElementById('post-content').innerHTML = contentHtml;
+
+
+         } catch (error) {
+           console.error('Error fetching blog post:', error);
+         }
+       }
+
+       fetchAndDisplayPost(postId);
+     });
+
+   </script>
+
+</body>
+
+</html>
